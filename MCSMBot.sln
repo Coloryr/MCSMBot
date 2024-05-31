@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.34707.107
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MCSMBot", "MCSMBot\MCSMBot.csproj", "{7FF04E83-92EF-4497-9D8E-06E01A540211}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OneBotSharp", "OneBotSharp\OneBotSharp\OneBotSharp.csproj", "{385D69F3-B431-4983-AAF2-A69B444BC04B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{7DCB6D85-ECE3-4394-B276-72FEE762F879}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7FF04E83-92EF-4497-9D8E-06E01A540211}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7FF04E83-92EF-4497-9D8E-06E01A540211}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7FF04E83-92EF-4497-9D8E-06E01A540211}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7FF04E83-92EF-4497-9D8E-06E01A540211}.Release|Any CPU.Build.0 = Release|Any CPU
+		{385D69F3-B431-4983-AAF2-A69B444BC04B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{385D69F3-B431-4983-AAF2-A69B444BC04B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{385D69F3-B431-4983-AAF2-A69B444BC04B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{385D69F3-B431-4983-AAF2-A69B444BC04B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CA47473A-E92A-466B-B4FD-C5F40CA76834}
+	EndGlobalSection
+EndGlobal
