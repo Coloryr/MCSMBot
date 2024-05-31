@@ -61,7 +61,7 @@ internal class Program
             var dir1 = new Dictionary<string, string>();
             foreach (var item1 in data1.Data.Data)
             {
-                dir1.Add(item1.config.Nickname, item1.InstanceUuid);
+                dir1.Add(item1.config.Nickname.ToLower(), item1.InstanceUuid);
             }
             s_instances.Add(item.UUID, dir1);
         }
@@ -109,9 +109,22 @@ internal class Program
                     MsgText.Build($"后端节点：{data.Data.RemoteCount.Available}/{data.Data.RemoteCount.Total}\n")
                 };
                 s_nodes.Clear();
+                s_instances.Clear();
                 foreach (var item in data.Data.Remote)
                 {
-                    s_nodes.Add(item.Remarks, item.UUID);
+                    s_nodes.Add(item.Remarks.ToLower(), item.UUID);
+                    var data1 = await MCSMHttp.GetInstances(item.UUID);
+                    if (data1 == null || data1.Status != 200)
+                    {
+                        Console.WriteLine("获取MCSM实例数据失败，请检查Url和Key");
+                        return;
+                    }
+                    var dir1 = new Dictionary<string, string>();
+                    foreach (var item1 in data1.Data.Data)
+                    {
+                        dir1.Add(item1.config.Nickname.ToLower(), item1.InstanceUuid);
+                    }
+                    s_instances.Add(item.UUID, dir1);
                     list.Add(MsgText.Build($"\nMCSM节点：{item.Remarks} {(item.Available ? "在线" : "离线")}\n"));
                     list.Add(MsgText.Build($"版本：{item.Version}\n"));
                     list.Add(MsgText.Build($"系统：{item.System.Type}-{item.System.Release}\n"));
@@ -151,7 +164,7 @@ internal class Program
 
                     foreach (var item in data.Data.Data)
                     {
-                        dir1.Add(item.config.Nickname, item.InstanceUuid);
+                        dir1.Add(item.config.Nickname.ToLower(), item.InstanceUuid);
                         list.Add(MsgText.Build($"\n实例：{item.config.Nickname} {GetStateCode(item.Status)}\n"));
                         var epoch = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
                         var dateTime = epoch.AddMilliseconds(item.config.LastDatetime);
