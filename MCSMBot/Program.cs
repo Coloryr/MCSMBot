@@ -113,7 +113,7 @@ internal class Program
                 {
                     s_nodes.Add(item.Remarks, item.UUID);
                     list.Add(MsgText.Build($"\nMCSM节点：{item.Remarks} {(item.Available ? "在线" : "离线")}\n"));
-                    list.Add(MsgText.Build($"版本：{data.Data.Version}\n"));
+                    list.Add(MsgText.Build($"版本：{item.Version}\n"));
                     list.Add(MsgText.Build($"系统：{item.System.Type}-{item.System.Release}\n"));
                     list.Add(MsgText.Build($"Cpu:{item.System.CpuUsage * 100:.##}% Mem:{item.System.MemUsage * 100:.##}%\n"));
                     list.Add(MsgText.Build($"节点实例：{item.Instance.Running}/{item.Instance.Total}"));
